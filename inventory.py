@@ -19,5 +19,4 @@ def format_price(cents: int) -> str:
 
 
 def cheapest(items: list[Item]) -> Item:
-    # Bug on purpose: crashes on an empty list instead of raising ValueError.
-    return sorted(items, key=lambda i: i.price_cents)[0]
+    return min(items, key=lambda i: i.price_cents)
