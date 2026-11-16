@@ -46,3 +46,9 @@ Each agent fixed the failing test in its own sandbox, pushed the branch, and ope
 
 - [#1 Raise ValueError from cheapest() on an empty list](https://github.com/DhyeyMavani2003/sbx-pairing-demo/pull/1), opened by Claude Code
 - [#2 Fix cheapest to raise ValueError for empty inventory](https://github.com/DhyeyMavani2003/sbx-pairing-demo/pull/2), opened by Codex
+
+## Diagrams
+
+The diagrams in [`docs/diagrams/`](docs/diagrams/) explain how the pieces fit together. Each one has a PNG, an SVG, and an editable `.excalidraw` source you can open at [excalidraw.com](https://excalidraw.com). `docs/diagrams/generate.py` rebuilds the sources.
+
+![What stays on your laptop and what runs inside the sandbox](docs/diagrams/claude-sandbox-boundary.png)
