@@ -27,3 +27,22 @@ Swap `claude` for `codex` to run Codex instead. Ask the agent to run the tests, 
 $ git fetch sandbox-pairing-demo
 $ git log --oneline main..sandbox-pairing-demo/<branch>
 ```
+
+## What it looks like
+
+Claude Code inside a sandbox, with permission prompts off:
+
+![Claude Code running inside a Docker sandbox](docs/claude-in-sandbox.png)
+
+Codex inside a sandbox, in full-access mode:
+
+![Codex running inside a Docker sandbox](docs/codex-in-sandbox.png)
+
+Short recordings of both sessions are in [`docs/`](docs/).
+
+## Pull requests opened from inside a sandbox
+
+Each agent fixed the failing test in its own sandbox, pushed the branch, and opened the pull request with `gh`. The GitHub token never entered the sandbox: `sbx secret set github --command 'gh auth token'` keeps it on the host, and a proxy adds it to GitHub requests.
+
+- [#1 Raise ValueError from cheapest() on an empty list](https://github.com/DhyeyMavani2003/sbx-pairing-demo/pull/1), opened by Claude Code
+- [#2 Fix cheapest to raise ValueError for empty inventory](https://github.com/DhyeyMavani2003/sbx-pairing-demo/pull/2), opened by Codex
